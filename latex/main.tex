@@ -1,0 +1,63 @@
+\documentclass[journal]{IEEEtran}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{stfloats}
+\usepackage{verbatim}
+\usepackage{url} % typeset URL's reasonably
+\usepackage{listings}
+\usepackage{pslatex} % Use Postscript fonts
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subscript}
+\usepackage{graphicx}
+\usepackage{mdwmath}
+\usepackage{mdwtab}
+\usepackage{url}
+\usepackage{array}
+\usepackage{dcolumn}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{gensymb}
+\usepackage{tikz}
+\usepackage{subcaption}
+
+\hyphenation{}
+
+\begin{document}
+\title{FlexLION: A Bandwidth-Reconfigurable Low-Power Optical Switching Fabric}
+
+%\author{Pouya~Fotouhi, Sebastian~Werner, Roberto~Proietti, Xian~Xiao, S.J.~Ben~Yoo}
+
+% The paper headers
+\markboth{FlexLION: A Bandwidth-Reconfigurable Low-Power Optical Interconnect Fabric}{}
+
+\maketitle
+
+\begin{abstract}
+Interconnection networks are critical for the performance and energy efficiency of high-performance computing systems all the way through the system hierarchy from on-chip up to inter-rack communication. While high network bandwidth is crucial to prevent performance degradation, communication patterns in modern workloads are typically not evenly distributed over all nodes and exhibit phases of high and low communication, often leading to underutilization or congestion of network resources. Besides, although switch traversals cause significant latency overheads (100s of ns for rack-scale switches), lowering the network diameter is prohibitively expensive due to the large number of interconnects needed to provide a fully-connected network. In this paper, we introduce FlexLION, a silicon-photonic switching fabric enabling diameter-1 all-to-all connectivity and flexible bandwidth reconfiguration between any sender-receiver pair, which allows to steer the bandwidth towards those links that are more heavily loaded during a workload. Bandwidth reconfiguration is enabled by co-integrating a silicon photonic (SiPh) Arrayed Waveguide Grating Router (AWGR), SiPh microring resonators (MRRs), and a SiPh spatial switch in the same package. FlexLION's high bandwidth utilization enables significant savings of network resources without sacrificing performance. When part of a  network, our results show that FlexLION reduces energy-per-bit by up to 6.2x and packet latency by 25\% compared to state-of-the-art fat tree networks, while providing similar maximum throughput. 
+\end{abstract}
+
+\begin{IEEEkeywords}
+Silicon Photonics, Interconnection Networks, High Performance Computing
+\end{IEEEkeywords}
+
+\input{introduction}
+\input{enablingTech}
+\input{proposalArch}
+\input{evaluation}
+\input{relatedWork}
+
+\section{Conclusion}
+This paper presented FlexLION, a silicon-photonic interconnect fabric enabling all-to-all connectivity and bandwidth steering. FlexLION exploits the co-integration of AWGRs, MRs and spatial switches on the same chip to construct a flexible and energy-efficient interconnection fabric. When implemented as part of an HPC network, we found that FlexLION can reduce latency by 25\% and energy-per-bit  by up to 6.2x while sustaining similar maximum throughput compared to state-of-the-art tree-based topologies. Energy savings mainly come from the higher link utilization FlexLION offers, which in turn enables a network with fewer switches and transceivers. FlexLION fits on a $12mm \times 13mm$ interposer and can be reconfigured within just 1$\mu$s. Therefore, it is not only restricted to HPC networks, but may also be suitable for networks lower down the hierarchy, e.g. for on-board connectivity between multiple processors and memories or for intra-rack communication. 
+
+\IEEEpeerreviewmaketitle
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
+
+
